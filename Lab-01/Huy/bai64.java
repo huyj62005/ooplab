@@ -1,4 +1,4 @@
-package Huy;
+package Huy; 
 
 import java.util.Scanner;
 
