@@ -1,0 +1,9 @@
+Bài 10:
+Java không cho phép hai constructor có cùng danh sách tham số vì trình biên dịch sẽ báo lỗi vì không thể phân biệt hai constructor.Thay vào đó,có thể khai báo nhiều constructor trong cùng một lớp với danh sách tham số khác nhau.
+Bài 16:
+1.After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+
+Sau khi lệnh swap(jungleDVD, cinderellaDVD) thực hiện, tham chiếu jungleDVD và cinderellaDVD được sao chép vào tham số dvd1 và dvd2 của phương thức swap().Khi hoán đổi trong phương thức thì chỉ hoán đổi hai biến tham chiếu cục bộ, không ảnh hưởng đến biến gốc trong main().Do đó, sau khi gọi swap(), tiêu đề của hai đối tượng vẫn không thay đổi. 
+2.After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed? 
+
+Khi truyền jungleDVD vào phương thức changeTitle(), biến tham số dvd trong phương thức vẫn trỏ đến cùng một đối tượng trong bộ nhớ heap.Khi ta gọi dvd.setTitle(newTitle), tiêu đề của đối tượng này thay đổi trực tiếp trong bộ nhớ. Vì jungleDVD cũng trỏ đến cùng đối tượng đó, nên sự thay đổi có thể thấy được bên ngoài phương thức.
