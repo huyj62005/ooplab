@@ -1,20 +1,3 @@
-14.Which classes are aggregates of other classes? Are the parts properly initialized in their constructors?
-
-Trong Dự án AIMS, các lớp CompactDisc, Cart, Store và Book là tổng hợp của các lớp khác. CompactDisc chứa danh sách các đối tượng Track, trong khi Cart và Store quản lý danh sách Media. Book chứa danh sách tên tác giả. Trong mọi trường hợp, các danh sách tổng hợp đều
-được khởi tạo đúng cách trong các hàm tạo để đảm bảo hành vi chính xác và tránh tham chiếu null. Lớp Media được tổng hợp với các lớp Cart và Store. Điều này có nghĩa là các hàm tạo của các lớp đó phải khởi tạo bất kỳ đối tượng nào mà chúng được tạo thành.
-
-15.When overriding the equals() method of the Object class, you will have to cast the Object parameter obj to the type of Object that you are dealing with. For example, in the Media class, you must cast the Object obj to a Media, and then check the equality of the two objects’ attributes as the above requirements (i.e. title for Media; title and length for Track). If the passing object is not an instance of Media, what happens? 
-
-Khi ghi đè equals(), nếu đối tượng truyền không phải là một thể hiện của lớp mục tiêu (như Media hoặc Track), phương thức sẽ trả về false một cách an toàn mà không cần thử ép kiểu. Điều này xảy ra vì kiểm tra instanceof không thành công trước, ngăn chặn bất kỳ lassCastException nào. Ví dụ, so sánh một đối tượng Media với một String hoặc Track sẽ ngay lập tức trả về false thay vì đưa ra lỗi, duy trì hợp đồng equals() của Java yêu cầu các kiểu không bằng nhau phải không bằng nhau. Kiểm tra diễn ra trước khi ép kiểu, đảm bảo an toàn cho kiểu.
-
-16.1.What are the advantages of Polymorphism? 
-Tính đa hình giúp tăng tính linh hoạt và khả năng tái sử dụng của mã nguồn. Nhờ đó, một phương thức hoặc đối tượng có thể hoạt động theo nhiều cách khác nhau tùy thuộc vào ngữ cảnh cụ thể. Điều này giúp code dễ mở rộng, dễ bảo trì và giảm trùng lặp.
-16.2.How is Inheritance useful to achieve Polymorphism in Java? 
-Kế thừa cho phép một lớp con kế thừa các thuộc tính và phương thức từ lớp cha. Khi lớp con ghi đè lại phương thức của lớp cha, và đối tượng được tham chiếu bằng kiểu của lớp cha nhưng thực tế là của lớp con, thì khi gọi phương thức, chương trình sẽ gọi đúng phiên bản của lớp con. Đây chính là cơ chế hoạt động của đa hình.
-16.2.3.What are the differences between Polymorphism and Inheritance in Java? 
--Kế thừa là mối quan hệ giữa các lớp, trong đó một lớp con kế thừa từ lớp cha. Nó giúp tái sử dụng mã và tạo ra cấu trúc phân cấp.
--Đa hình là khả năng mà cùng một phương thức có thể có nhiều cách thực thi khác nhau. Nó thường được sử dụng để ghi đè hoặc nạp chồng phương thức.
-
 17.1.What class should implement the Comparable interface?
 Một lớp nên triển khai giao diện Comparable nếu chúng ta muốn định nghĩa thứ tự mặc định cho các thể hiện của nó.
 17.2.In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
