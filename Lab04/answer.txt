@@ -1,0 +1,28 @@
+Question:Programming with AWT and Swing is quite similar (similar elements including container/components, and event-handling). However, there are some differences that you need to note:
+o Compare the top-level containers in Swing and AWT
+o Compare the class name of components in AWT and the corresponding class’s name in Swing
+o Compare the event-handling of Swing and AWT applications
+The resulting appearances of the applications developed using Swing and AWT might be different as well. Make comparisons.
+
+
+
+1. Top-level container
+Cả AWT và Swing đều cung cấp bộ chứa cấp cao nhất để lưu trữ các thành phần, nhưng chúng khác nhau về thiết kế:
+- AWT sử dụng Frame, Dialog và Applet.
+- Swing cung cấp các phiên bản nâng cao: JFrame, JDialog và JApplet.
+-> Bộ chứa Swing nhẹ và hỗ trợ các tính năng như bảng điều khiển gốc và giao diện có thể cắm được, không giống như các bộ chứa gốc (nặng) của AWT.
+
+2. Component Class Names
+- AWT và Swing cung cấp các thành phần tương tự, nhưng các thành phần Swing được thêm tiền tố "J" và linh hoạt hơn.
+- Các thành phần Swing được viết hoàn toàn bằng Java và hỗ trợ tùy chỉnh, trong khi các thành phần AWT dựa trên mã gốc.
+
+3. Event Handling
+Cả AWT và Swing đều sử dụng mô hình ủy quyền sự kiện, trong đó các sự kiện được xử lý bằng cách đăng ký trình lắng nghe:
+- Các lớp sự kiện và giao diện trình lắng nghe (ví dụ: ActionEvent, MouseListener) được chia sẻ giữa cả hai.
+- Trong Swing, xử lý sự kiện thường được thực hiện bằng các lớp bên trong ẩn danh hoặc biểu thức lambda.
+- Swing yêu cầu cập nhật các thành phần GUI trên Event Dispatch Thread (EDT) để đảm bảo an toàn cho luồng, trong khi AWT ít nghiêm ngặt hơn về vấn đề này.
+
+4. Appearance and Look & Feel
+- AWT sử dụng giao diện của hệ điều hành gốc, hạn chế khả năng tùy chỉnh.
+- Swing hỗ trợ giao diện có thể cắm được, cho phép các ứng dụng sử dụng các chủ đề tùy chỉnh hoặc đa nền tảng.
+- Do đó, các ứng dụng Swing có thể hiện đại và nhất quán hơn trên các nền tảng, trong khi các ứng dụng AWT phù hợp với giao diện người dùng của hệ thống nhưng thiếu tính linh hoạt về kiểu dáng.

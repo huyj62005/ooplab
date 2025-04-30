@@ -23,7 +23,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
 	protected
     JPanel createCenter() {
         JPanel center = new JPanel();
-        center.setLayout(new GridLayout(6, 2, 10, 10));
+        center.setLayout(new GridLayout(7, 2, 10, 10));
 
         JLabel titleLabel = new JLabel("Title:");
         titleField = new JTextField(50);
