@@ -1,6 +1,6 @@
 package Huy;
 
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane
 
 public class ChoosingOption {
     public static void main(String[] args) {
